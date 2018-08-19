@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.1)
+
+project("unity" C)
+
+set(UNITY_VER Unity-2.4.3)
+
+set(UNITY_SRC_DIR
+    ${CMAKE_CURRENT_SOURCE_DIR}/${UNITY_VER}/src
+    CACHE INTERNAL "UNITY_SRC_DIR")
+set(UNITY_BIN_DIR
+    ${CMAKE_CURRENT_BINARY_DIR}/${UNITY_VER}
+    CACHE INTERNAL "UNITY_BIN_DIR")
+set(UNITY_INC_DIR
+    ${UNITY_SRC_DIR}
+    CACHE INTERNAL "UNITY_INC_DIR")
+
+set(UNITY_SRC
+    ${UNITY_SRC_DIR}/unity.c
+)
+
+add_library(unity ${UNITY_SRC})
